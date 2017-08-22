@@ -1,4 +1,6 @@
-ifneq ($(filter msm8996,$(TARGET_BOARD_PLATFORM)),)
+# TODO:  Find a better way to separate build configs for ADP vs non-ADP devices
+ifneq ($(BOARD_IS_AUTOMOTIVE),true)
+ifneq ($(filter msm8996 msm8998,$(TARGET_BOARD_PLATFORM)),)
 ifeq ($(AB_OTA_UPDATER),true)
 LOCAL_PATH := $(call my-dir)
 
@@ -7,10 +9,12 @@ include $(CLEAR_VARS)
 LOCAL_C_INCLUDES += hardware/libhardware/include
 LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/gpt-utils/inc
 LOCAL_CFLAGS += -Wall -Werror
-LOCAL_SHARED_LIBRARIES += liblog $(TARGET_RECOVERY_UPDATER_LIBS) libcutils
+LOCAL_SHARED_LIBRARIES += liblog $(TARGET_RECOVERY_UPDATER_LIBS) libgptutils libcutils
 LOCAL_SRC_FILES := boot_control.cpp
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE := bootctrl.$(TARGET_BOARD_PLATFORM)
+LOCAL_MODULE_OWNER := qcom
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
 # Static library for the target. Used by update_engine_sideload from recovery.
@@ -18,10 +22,11 @@ include $(CLEAR_VARS)
 LOCAL_C_INCLUDES += hardware/libhardware/include
 LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/gpt-utils/inc
 LOCAL_CFLAGS += -Wall -Werror
-LOCAL_SHARED_LIBRARIES += liblog $(TARGET_RECOVERY_UPDATER_LIBS) libcutils
+LOCAL_SHARED_LIBRARIES += liblog $(TARGET_RECOVERY_UPDATER_LIBS) libgptutils libcutils
 LOCAL_SRC_FILES := boot_control.cpp
 LOCAL_MODULE := bootctrl.$(TARGET_BOARD_PLATFORM)
 include $(BUILD_STATIC_LIBRARY)
 
+endif
 endif
 endif
