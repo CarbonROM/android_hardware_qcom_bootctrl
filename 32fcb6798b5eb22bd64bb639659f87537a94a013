@@ -1,0 +1,4 @@
+{
+  "pushCert": "certificate version 0.1\npusher 0FBB331F 1581705936 -0500\npushee ssh://review.carbonrom.org:29418/CarbonROM/android_hardware_qcom_bootctrl\nnonce 1581705935-94A4B0A2B264733E2D64E837095938AA349BCF3B\n\n0000000000000000000000000000000000000000 32fcb6798b5eb22bd64bb639659f87537a94a013 refs/for/cr-8.0\n-----BEGIN PGP SIGNATURE-----\n\niQEzBAABCAAdFiEEkqz1NuhTmwnMKC0bhlFdVg+7Mx8FAl5G6tAACgkQhlFdVg+7\nMx+mSgf+KM15SAJFPVQUkLZT+jGa05DKrhJ91yPIc7ldid2CDlqv+t98iIGuN/zL\nOogtpzu+ByiW785oMKI7N7nNBqklJd/tx3PO1ApJXUGzFTDOgRTgTnC26UnmtK+V\nqhpTkrbM8/8HGp/fPQ+hNwe8+n0h2YBFtEyChsp+N1A8VCBcAP2mlqcj1KgTwDhP\n7eN6p0mccXCDtS3DD1b/ALZjSm7zBjgvEF3A2Xwr83opZqZuNoTQkqMxB/jTCL3G\ns0r3TPp4yYcGEAXAnAj8eCGje55BaJGPbqmLbs5iiBi9nKcG+U7rlcyh+3t5mXUO\nvd+acswvRPCUdDprTncJSMrXIxTLOg\u003d\u003d\n\u003dVmYF\n-----END PGP SIGNATURE-----\n",
+  "comments": []
+}
